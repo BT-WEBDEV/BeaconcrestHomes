@@ -1,0 +1,929 @@
+/* CSS Document */
+/*************************************************
+**************************************************
+Website Name: Beacon Crest
+Website URL: 
+Website Author: GKA Advertising - Amra Narmandakh
+Copyright 2017. All Rights Reserved.
+*************************************************/
+
+/************************************************
+*************************************************
+Page Index
+------------------------------------------------
+00. Base
+01. Buttons
+02. Globals
+03. Modules
+04. Nav Footer
+05. Typography
+*************************************************
+************************************************/
+@import "compass";
+@import "partials/normalize.scss";
+@import "partials/variables.scss";
+@import "partials/mixins.scss";
+
+/* 00. Base */
+
+html {
+  min-height: 100%; // Sticky
+  position: relative; // Sticky
+  margin: 0 auto;
+  background-color: #e9e9e9;
+}
+
+/* Slider */
+.full-screen {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// HOME
+#available-homes-combo {
+  .combo-image {@include cover-bg-img('/images/home-modules/1912-Foxview-Circle-NW-High-Res-(2).jpg');}
+  .combo-text {
+    h4 {color: $white;}
+  }
+}
+#contact-combo {
+  h2, h5, p {color: $white;}
+  p {margin-bottom: 0;}
+  a:link, a:visited {color: $white;}
+  a:hover, a:active {color: $light-blue;}
+  @include cover-bg-img('/images/home-modules/DSC_1474.jpg');
+}
+
+// AVAILABLE HOMES > Properties
+.property-details {
+  padding-left: 2em;
+  h3 {
+    color: $light-blue;
+    margin-bottom: 2em;
+  }
+  p.contact-line {
+    color: $olive;
+    margin-bottom: 0.5em;
+  }
+  .contact-line-style {
+    font-weight: 400;
+    color: $dark-blue;
+  }
+  #property-description {
+    padding-top: 1.5em;
+  }
+}
+.features {
+  h5 {padding-bottom: 0.5em; margin-bottom: 1em; border-bottom: 1px solid $dark-blue;}
+  margin: 2em 0;
+  padding: 2em;
+  background-color: #e9e9e9;
+  ul.force-columns {
+    padding: 0;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    columns: 3;
+    li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 1em 0;
+    }
+  }
+}
+#property-email {
+  margin-top: 1em;
+  // padding-top: 1em;
+  form {
+    font-size: 1.25em;
+    .input-inline {
+      display: inline-block; width: 49.2%;
+    }
+    label {
+      @extend .oswald-light;
+      color: $dark-blue;
+      text-align: left;
+      padding: 0;
+    }
+    input[type=text], 
+    textarea {
+      width: 100%;
+      background-color: #e6e8e7;
+      border: none;
+      margin: 0 0 0.75em 0;
+    }
+    input[type=text] {height: 2em;}
+    textarea {height: 5em;}
+    .captcha input[type=text] {
+      display: inline-block;
+      width: 15%;
+      margin-right: 0.5em;
+      background-color: transparent;
+      border-bottom: 1px solid $dark-blue;
+    }
+    input[type=submit] {
+      @extend .oswald-regular;
+      width: 100%;
+      height: 3em;
+      font-size: 0.75em;
+      color: $white;
+      background-color: $dark-blue;
+      border: none;
+    }
+  }
+}
+
+// PORTFOLIO
+#gallery {margin-bottom: 5px; margin-left: 0;}
+#portfolio-combo {
+  .combo-text { h4 {color: $light-blue;} }
+  .combo-image {@include cover-bg-img('/portfolio/images/01_Front1MED.jpg');}
+}
+
+// OUR PROCESS
+#consult-combo {
+  h4 {color: $light-blue;}
+  p {color: $white;}
+  .combo-image {@include cover-bg-img('/our-process/images/Beac-1900-Vermont-06.jpg');}
+}
+#construction-combo {
+  h4 {color: $white;}
+  .combo-image {@include cover-bg-img('/our-process/images/Fox 1904 Foxview 22.jpg');}
+}
+#delivery-combo {
+  h4 {color: $light-blue;}
+  p {color: $white;}
+  .combo-image {@include cover-bg-img('/our-process/images/DSC_1628.jpg');}
+}
+
+// BUILD ON YOUR LOT
+#boyl-combo-1 {
+  h4 {color: $light-blue;}
+  .combo-image {@include cover-bg-img('/build-on-your-lot/images/Fox-1904-Foxview-09.jpg');}
+}
+#we-buy-homes {
+  h4 {color: $light-blue;}
+  .combo-image {@include cover-bg-img('/webuyhomes/images/we-buy-house.jpg');}
+}
+#boyl-combo-2 {
+  h4 {color: $light-blue;}
+  .combo-image {@include cover-bg-img('/build-on-your-lot/images/39A-Living-Room-2.jpg');}
+}
+#boyl-combo-3 {
+  h4 {color: $light-blue;}
+  .combo-image {@include cover-bg-img('/build-on-your-lot/images/1905-Foxhall-Circle-Hi-Res-(21).jpg');}
+}
+
+.faq-block {
+  background-color: $olive;
+  padding: 0 5%;
+  .row {
+    padding: 4%;
+    background-color: $white;
+  }
+  .faq {
+    h3 {color: $light-blue; margin-bottom: 15px;}
+    h6 {font-weight: 700; margin-bottom: 30px;}
+    ul.faq-list, ul.faq-list li {margin: 0; padding: 0;}
+    ul.faq-list li.faq-question {
+      position: relative;
+      list-style-type: none;
+      padding: 0.6818em 4em 0.6818em 0.6818em;/* 15/22*/
+      margin: 0.6818em 0;/* 15/22*/
+      border: 2px solid;
+      border-color: #def2f7;
+      background-image: url(/build-on-your-lot/images/icons/faq-arrow-down.png);
+      background-repeat: no-repeat;
+      background-position: 98% 1em;
+      ul.faq-drop {
+        padding: 0 3.5em 0 0em;
+        display: none;
+      }
+      ul.faq-drop li {
+        font-size: 0.75em;
+        color: $black-6;
+        padding: 0.5em 3em 0 1em;
+        border-top: 1px solid $black-9;
+      }
+    }
+    ul.faq-drop li {
+      list-style-type: none;
+      border: none;
+    }
+    .clicked-question {
+      background-image: url(/build-on-your-lot/images/icons/faq-arrow-up.png) !important;
+      border-color: $light-blue !important;
+    }
+    .flip-faq-arrow {
+      -webkit-transform: rotate(180deg);/* Chrome, Safari, Opera*/
+          -ms-transform: rotate(180deg);/* IE 9*/
+              transform: rotate(180deg);
+    }
+  }
+}
+
+
+// ABOUT US
+
+
+
+// CONTACT US
+.result {
+  display: none;
+}
+#contact-page {
+  p {color: $white;}
+  a:link, a:visited {color: $white;}
+  #contact-map-div {padding: 0; background-repeat: no-repeat; background-size: cover; background-position: center center;}
+  #contact-content {padding: 0;}
+
+}
+.contact-form {padding: 2em 4em;/*60/20*/
+  button, input, select, textarea {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid $dark-blue;
+  }
+  input[name="captcha"] {width: 30%;}
+}
+
+
+/* MEDIA QUERIES */
+/* <1200px */
+@media only screen and (max-width : $screen-md-max) {
+  // body {border: 1px solid #ff00ff; padding-bottom: 0;}
+  body {padding-bottom: 0;}
+  .property-details {padding-left: 1em;}
+}
+
+/* <992px */
+@media only screen and (max-width : $screen-sm-max) {
+  // body {border: 1px solid #00ffff;}
+  #contact-page {
+    #contact-map-div {height: 20em;}
+  }
+}
+/* <768px */
+@media only screen and (max-width : $screen-xs-max) {
+  // body {border: 1px solid #ffff00;}
+  .property-details {
+    #property-email form {
+      .input-inline {
+        div {display: inline-block; width: 100%;}
+      }
+    }
+  }
+  .features {
+    ul.force-columns {
+      -webkit-columns: 3;
+      -moz-columns: 3;
+      columns: 3;
+    }
+  }
+}
+
+@media only screen and (min-width : 1600px) {
+  .col-xlg-3 {
+    width: 25%;
+  }
+}
+
+
+/* 01. Buttons */
+a:focus, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+a.button:link, a.button:visited {
+  @extend .oswald-light;
+  display: inline-block;
+  font-size: 1.1em;/*22/20*/
+  padding: 0.416em 2.5em;/*10/24, 70/24*/
+  text-align: center;
+}
+.bu-white {
+  color: $dark-blue;
+  background-color: $white;
+  border: 1px solid $dark-blue;
+}
+  a.bu-white:hover, a.bu-white:active {
+    color: $white;
+    background-color: $dark-blue;
+    border-color: $white;
+  }
+.bu-light-blue {
+  color: $white;
+  background-color: $light-blue;
+  border: 1px solid $white;
+}
+  a.bu-light-blue:hover, a.bu-light-blue:active {
+    color: $light-blue;
+    background-color: $white;
+    border-color: $light-blue;
+  }
+.bu-dark-blue {
+  color: $white;
+  background-color: $dark-blue;
+  border: 1px solid $white;
+}
+  a.bu-dark-blue:hover, a.bu-dark-blue:active {
+    color: $dark-blue;
+    background-color: $white;
+    border-color: $dark-blue;
+  }
+a.bu-olive:link, a.bu-olive:visited {
+  color: $white;
+  background-color: $olive;
+  border: 1px solid;
+  border-color: $white;
+}
+  a.bu-olive:hover, a.bu-olive:active {
+    color: $dark-blue;
+    border-color: $dark-blue;
+  }
+
+/* MEDIA QUERIES */
+/* >1200px */
+@media only screen and (max-width : $screen-md-max) {
+  
+}
+
+/* <992px */
+@media only screen and (max-width : $screen-sm-max) {
+  
+}
+/* <768px */
+@media only screen and (max-width : $screen-xs-max) {
+  .text-image-combo {
+    .combo-text {text-align: center;}
+    .button-group {
+    a {margin-bottom: 1em;}
+    a.button:link, a.button:visited {width: 100%;}
+  }
+  }
+}
+
+/* 02. Globals */
+
+// GOOGLE MAPS
+#map {height: 100%;}
+.no-map-coords {@include cover-bg-img('/available-homes/images/no-map-coords.jpg');}
+#listing-map-div {height: 20em; width: 100%;}
+
+// SPACING
+.group-pad {padding: 3em 3.5em;/*60/20, 70/20*/}
+
+// BACKGROUNDS
+.dark-blue-bg {background-color: $dark-blue; color: $white;}
+.light-blue-bg {background-color: $light-blue;}
+.olive-bg {background-color: $olive; color: $dark-blue;}
+.light-olive-bg {background-color: $light-olive; color: $dark-blue;}
+
+// ICONS
+.icon {margin-bottom: 1.5em;/*30/20*/}
+p.phone-icon::before, 
+p.email-icon::before {padding-right: 1em;}
+p.phone-icon::before {content: url('/contact-us/images/phone-icon.png');}
+p.email-icon::before {content: url('/contact-us/images/email-icon.png');}
+
+/* MEDIA QUERIES */
+/* >1200px */
+@media only screen and (max-width : $screen-md-max) {
+  
+}
+/* <992px */
+@media only screen and (max-width : $screen-sm-max) {
+
+}
+/* <768px */
+@media only screen and (max-width : $screen-xs-max) {
+  
+}
+
+
+/* 03. Modules */
+
+// PAGE HEAD MODULES
+#home-head { h2 {color: $light-blue;} }
+#available-homes-head { h2 {color: $light-blue;} }
+#our-process-head { h2 {color: $dark-blue;} }
+#boyl-head { h4 {color: $white;} }
+#about-us-head { h2 {color: $light-blue;} }
+#contact-head { h2 {color: $white;} }
+
+// TEXT IMAGE COMBO
+.text-image-combo {
+  margin-bottom: 0.25em;/*5/20*/
+  p {color: $black-3;}
+  .button-group {margin-top: 3.1818em;/*70/22*/}
+  .combo-text {min-height: 20em;}
+}
+
+// PROPERTY CARDS MODULES
+.property-cards {
+  .card-wrapper {
+    background-color: $white;
+    margin-bottom: 2em;
+    div:not(.card-image) {padding: 12px 20px;/*30/28*/}
+    .card-head {
+      background-color: $light-blue;
+      margin-bottom: 0.166em;/*5/28*/
+      h3, p {
+        color: $white;
+        margin-bottom: 0;
+      }
+      h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+    .card-image {
+      // @include php-set-dynamic-bg-img(16em);
+      @include php-set-dynamic-bg-img(16em);
+      .special {position: absolute; top: 0; right: 0;}
+    }
+    .card-details {
+      p {
+        font-size: 0.9em;/*18/20*/
+        color: $black-6;
+        margin-bottom: 0.25em;/*5/20*/
+      }
+    }
+  }
+}
+.property-overlook {
+  .property-thumb {
+    // @include php-set-dynamic-bg-img(20em);
+    padding: 0;
+    overflow: hidden;
+    .fotorama__fullscreen-icon {
+      right: 0px;
+      bottom: 0px;
+      top: auto;
+      left: auto;
+    }
+    .fotorama__fullscreen-icon:before {
+      content: "Click to enlarge"
+    }
+    .fotorama__fullscreen-icon {
+      background-image: none;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: $olive;
+      background-color: rgba(0,0,0,0.25);
+      font-size: 0.75em;
+      text-align: center;
+      margin: 0;
+      padding-top: 5px;
+      text-transform: uppercase;
+    }
+    .thumbnail {
+      width: 100%;
+      height: auto;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      margin-bottom: 0;
+    }
+    .border-img {border: 1px solid $white;}
+    .special {position: absolute; top: 0; right: 0;}
+    .enlarge {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: $olive;
+      background-color: rgba(255,255,255,0.25);
+      p {
+        font-size: 0.75em;
+        text-align: center;
+        margin: 0;
+        margin: 0.5em;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .floor-plan-bu {position: absolute; top: 0; right: 0;}
+  .home-specs {
+    // * {display: inline-block;}
+    h2 {
+      margin: 0 0.1em 0.2em 0;
+      display: inline-block;
+    }
+    p {
+      color: $black-9;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+  }
+  .email-desc-toggle {
+    position: relative;
+    @extend .oswald-regular;
+    border-top: 1px solid #abb5b0;
+    border-bottom: 1px solid #abb5b0;
+    font-size: 1em;
+    height: 2.5em;
+    // padding: 0.75em 0.75em 0.75em 0;
+    #toggle-desc {display: none; opactiy: 0;}
+    a {
+      display: inline-block;
+      position: absolute;
+      top: 0.5em;
+    }
+  }
+  #property-email {display: none;}
+  a.prop-link:link {color: $black-6;}
+  a.prop-link:hover {color: $light-blue;}
+  .features a.features-toggle {display: inline-block; margin-bottom: 1em;}
+}
+
+// EMPLOYEE CARD MODULES
+.boss-card {
+  background-color: $white;
+  margin-bottom: 2em;
+  .boss-header {
+    padding: 1em;
+    background-color: $light-blue;
+    h3, h5 {display: inline-block;}
+    h3 {color: $white; margin: 0 0.1em 0.1em 0;}
+    h5 {margin-bottom: 0;}
+  }
+  .boss-stats {
+    img {
+      float: left;
+      width: 20%;
+      margin: -1em 1.5em 0 0;
+    }
+    p {margin: 1em 1em 1em 1em;}
+  }
+
+}
+
+
+/* MEDIA QUERIES */
+/* >1200px */
+@media only screen and (max-width : $screen-md-max) {
+  .property-cards {
+    .card-wrapper {
+      .card-image {
+        @include php-set-dynamic-bg-img(11em);
+      }
+    }
+  }
+  .property-overlook {
+    .home-specs {
+      * {display: block;}
+      h2 {margin-bottom: 0em;}
+      p {margin-bottom: 0.3em;}
+    }
+    .property-details {
+      .property-type-nav {
+        padding: 0.5em 0.5em 0.5em 0;
+        a:first-child {margin: 0 0.5em 0 0;}
+        a:not(:first-child) {margin: 0 0.5em;}
+      }
+    }
+  }
+}
+
+/* <992px */
+@media only screen and (max-width : $screen-sm-max) {
+  .property-cards {
+    .card-wrapper {
+      .card-image {@include php-set-dynamic-bg-img(14em);}
+    }
+  }
+  .property-overlook {
+    .home-specs * {display: block;}
+    .property-thumb {margin-bottom: 1em;}
+    .property-details {padding-left: 0; padding-right: 0;}
+  }
+}
+/* <768px */
+@media only screen and (max-width : $screen-xs-max) {
+  .property-overlook {
+    .property-details {
+      .property-type-nav {text-align: center;}
+      h3 {margin-bottom: 0.75em;}
+    }
+    .floor-plan-bu {
+      position: relative;
+      margin-bottom: 0.75em;
+      a {width: 100%}
+    }
+  }
+  .boss-card {
+    .boss-stats {
+      img {width: 100%; margin-bottom: 1em;}
+    }
+
+  }
+}
+
+/* 03. Nav Footer */
+
+// NAVIGATION
+.affix {top: 0;}
+#nav {
+  width: 100%;
+  // max-width: 1550px;
+  margin: 0 auto;
+  border-bottom: 3px solid $light-blue;
+}
+.navbar-default {z-index: 100;}
+.navbar {border-radius: 0;}
+.navbar-default {
+    background-color: $dark-blue;
+    border-top-width: 0;
+    border-color: transparent;
+    margin-bottom: 0;
+    .navbar-collapse {border-color: transparent;}
+    .navbar-brand {height: auto;}
+
+  .navbar-nav>li{margin-bottom: 0;}
+  .navbar-nav>li>a {
+    @extend .oswald-regular;
+    color: $white;
+    font-size: 1em;/*24/20*/
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+  }
+  .navbar-nav>li>a:hover {color: $light-blue;}
+  .navbar-nav>.open>a, 
+  .navbar-nav>.open>a:focus, 
+  .navbar-nav>.open>a:hover {
+    color: $light-blue;
+    background-color: transparent;
+  }
+  .navbar-nav>li>a:focus {color: $white;}
+  //DROPDOWN
+  .navbar-right .dropdown-menu {
+    right: auto;
+    left: 50%;
+    padding-top: 2em;
+    transform: translate(-50%, 0);
+    background-color: $light-blue;
+    border: none;
+    >li>a {
+      @extend .oswald-regular;
+      font-size: 1.4285em;/*20/14*/
+      color: $dark-blue;
+      text-align: center;
+    }
+    > li > a:hover {
+      color: $white;
+      background-color: transparent;
+    }
+  }
+}
+.navbar-fixed-top .navbar-collapse {max-height: none;}
+.navbar-default .navbar-nav > li > a.temp-disable:hover {color: $white;}
+//CURRENT PAGE
+a.dropdown-toggle.navItemHighlight,
+a.navItemHighlight {color: $light-blue !important;}
+.navIndicatorCss {
+  background-image: url(/images/global/nav-hover-triangle.png);
+  background-size: 2em;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+// FOOTER
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 0.25em;
+  background-color: $dark-blue;
+  #footer-logo {
+    padding: 2em 0 1em 0;
+    display: block;
+    margin: 0 auto;
+  }
+  #social-media {
+    text-align: center;
+    padding-bottom: 1em;
+    a {
+      display: inline-block;
+      img {padding: 15px;}
+    }
+  }
+  .legal {
+    position: relative;
+    padding: 1em 3.5em;
+    background-color: $olive;
+    margin: 0;
+    #copy {
+      position: absolute;
+      top: 2em;
+      margin: 0 auto;
+      text-align: center;
+      left: 50%;
+      p {
+        position: relative;
+        left: -50%;
+      }
+    }
+    #disclaimer {
+      position: absolute;
+      right: 3.5em;
+      bottom: 0;
+      a {border-bottom-color: transparent;}
+    }
+  }
+}
+
+
+/* MEDIA QUERIES */
+/* >1200px */
+@media only screen and (max-width : $screen-md-max) {
+  .navbar .navbar-brand img {width: 75%;}
+  .navbar-right {margin-right: 0;}
+  .container-fluid>.navbar-collapse {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .navbar-default .navbar-nav > li > a {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  footer {
+    // position: relative;
+    .legal {
+      padding: 1em 2em;
+      #copy {
+        p {margin-bottom: 0}
+      }
+      #disclaimer {right: 2em;}
+    }
+  }
+}
+/* <992px */
+@media only screen and (max-width : $screen-sm-max) {
+  .navbar .navbar-brand img {width: 8em;}
+  .navbar-default {
+    padding: 0;
+    li {
+      font-size: 1.025em;
+      a {padding: 1em 0;}
+    }
+    .dropdown-menu {
+      li {padding: 0; margin: 0;}
+    }
+    //DROPDOWN
+    .navbar-right .dropdown-menu {
+      padding-top: 0em;
+      background-color: $light-blue;
+      border: none;
+      >li>a {
+        font-size: 1.2em;
+        padding: 0.5em 0;
+      }
+    }
+  }
+  .navbar-default .navbar-nav > li > a {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+  }
+
+  footer {
+    // position: relative;
+    .legal {
+      position: relative;
+      padding: 1em 2em;
+      background-color: $olive;
+      margin: 0;
+      #disclaimer {right: 1em;}
+    }
+  }
+}
+/* <768px */
+@media only screen and (max-width : $screen-xs-max) {
+  .navbar-default {
+    .navbar-toggle {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    .navbar-nav>li>a {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      padding-left: 0em;
+      text-align: center;
+    }
+    //DROPDOWN
+    .navbar-right {margin: 1em 0;}
+    .navbar-right .dropdown-menu {
+      left: auto;
+      transform: translate(0);
+      background-color: transparent;
+      border: none;
+    }
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {color: $olive;}
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {color: $light-blue;}
+  .navbar-default .navbar-toggle {border-color: transparent;}
+  
+  footer {
+    text-align: center;
+    .legal {
+      position: relative;
+      padding: 1em 2em 0 2em;
+      background-color: $olive;
+      margin: 0;
+      #copy {
+        position: relative;
+        top: 0em;
+        left: 0;
+        p {
+          position: relative;
+          left: 0;
+          margin: 0.75em 0 1em 0;
+        }
+      }
+      #disclaimer {
+        position: relative;
+        right: auto;
+        a {border-bottom-color: transparent;}
+      }
+    }
+  }
+}
+
+
+/* 05. Typography */
+body {font-size: 20px; color: $black-6;}
+
+.oswald-light {font-weight: 300; font-family: 'Oswald', sans-serif;}
+.oswald-regular {font-weight: 400;font-family: 'Oswald', sans-serif;}
+.helvetica-regular {font-weight: 400; font-family: 'Helvetica', sans-serif;}
+.helvetica-bold {font-weight: 700;font-family: 'Helvetica', sans-serif;}
+
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6, p {margin: 0;}
+
+h2, .h2 {
+  @extend .oswald-light;
+  font-size: 2.6em; /*52/20*/
+  margin-bottom: 0.57692em;/*30/52*/
+}
+h3, .h3 {@extend .oswald-light; font-size: 1.4em;/* 28/20 */}
+h4, .h4 {
+  @extend .oswald-regular;
+  font-size: 1.5em;/*30/20*/
+  margin-bottom: 0.866em;/*26/30*/
+}
+h5, .h5 {
+  @extend .helvetica-bold;
+  font-size: 1.1em;/*22/20*/
+  margin-bottom: 0.6818em;/*15/22*/
+}
+p, li {
+  @extend .helvetica-regular;
+  font-size: 1em;/*20/20*/
+  margin-bottom: 1.5em;/*30/20*/
+}
+
+// STYLING
+.bold {font-weight: 700;}
+.align-c {text-align: center;}
+.align-r {text-align: right;}
+
+.no-padding {
+  padding: 0px;
+}
+/* MEDIA QUERIES */
+/* <1200px */
+@media only screen and (max-width : $screen-md-max) {
+  body {font-size: 18px;}
+}
+/* <992px */
+@media only screen and (max-width : $screen-sm-max) {
+  body {font-size: 15px;}
+}
+/* <768px */
+@media only screen and (max-width : $screen-xs-max) {
+  // body {font-size: 10px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+// COLORS
+$dark-blue: #192732;
+$light-blue: #59bed5;
+$olive: #abb5b0;
+$light-olive: #cfd4d1;
+$black: #000000;
+$black-3: #333333;
+$black-6: #666666;
+$black-9: #999999;
+$black-c: #cccccc;
+$white: #ffffff;
+
+// STICKY FOOTER
+// $footer-height: 15em;
+
+// MEDIA QUERIES
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+$screen-phone: $screen-xs-min;
+
+$screen-sm: 768px;
+$screen-sm-min: $screen-sm;
+$screen-tablet: $screen-sm-min;
+
+$screen-md: 992px;
+$screen-md-min: $screen-md;
+$screen-desktop: $screen-md-min;
+
+$screen-lg: 1200px;
+$screen-lg-min: $screen-lg;
+$screen-lg-desktop: $screen-lg-min;
+
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
